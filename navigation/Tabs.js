@@ -3,7 +3,7 @@ import {
   createBottomTabNavigator,
   screenOptions,
 } from "@react-navigation/bottom-tabs";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from "react-native";
 import HomeScreen from "../screens/HomeScreen";
 import ExploreScreen from "../screens/ExploreScreen";
 import ProgressScreen from "../screens/ProgressScreen";
@@ -11,13 +11,14 @@ import ProfileScreen from "../screens/ProfileScreen";
 
 const Tab = createBottomTabNavigator();
 
+let windowWidth = Dimensions.get('window').width
+
 const Tabs = () => {
   return (
     <Tab.Navigator
       screenOptions={{
         tabBarShowLabel: false,
         tabBarStyle: {
-          display: "flex",
           position: "absolute",
           bottom: 50,
           left: 20,
@@ -39,7 +40,7 @@ const Tabs = () => {
               style={{
                 alignItems: "center",
                 justifyContent: "center",
-                top: 15,
+                top: windowWidth/30,
               }}
             >
               <Image
