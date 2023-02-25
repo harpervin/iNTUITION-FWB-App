@@ -5,21 +5,33 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
+  StyleSheet,
+  Image,
 } from "react-native";
 
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
-import TestPNG from "../assets/images/test.png";
-
 import CustomButton from "../components/CustomButton";
 import InputField from "../components/InputField";
 
-const LoginScreen = () => {
+const styles = StyleSheet.create({
+  stretch: {
+    width: 400,
+    height: 350,
+    resizeMode: "stretch",
+  },
+});
+
+const LoginScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1, justifyContent: "center" }}>
       <View style={{ paddingHorizontal: 25 }}>
         <View style={{ alignItems: "center" }}>
+          <Image
+            style={styles.stretch}
+            source={require("../assets/images/study.png")}
+          />
           <Text
             style={{
               fontSize: 28,
@@ -70,7 +82,7 @@ const LoginScreen = () => {
           >
             <Text>New to the app?</Text>
             <TouchableOpacity onPress={() => navigation.navigate("Register")}>
-              <Text style={{ color: "#AD40AF", fontWeight: "700" }}>
+              <Text style={{ color: "#93BFCF", fontWeight: "700" }}>
                 {" "}
                 Register
               </Text>
