@@ -26,9 +26,10 @@ const styles = StyleSheet.create({
 });
 
 const RegisterScreen = ({ navigation }) => {
-  const [date, setDate] = useState(new Date());
-  const [open, setOpen] = useState(false);
-  const [dobLabel, setDobLabel] = useState("Date of Birth");
+  const [userEmail, setUserEmail] = useState('');
+  const [userName, setUserName] = useState('');
+  const [userPassword, setUserPassword] = useState('');
+
 
   return (
     <SafeAreaView style={{ flex: 1, justifyContent: "center" }}>
@@ -63,6 +64,8 @@ const RegisterScreen = ({ navigation }) => {
               style={{ marginRight: 5 }}
             />
           }
+          userInput = {userName}
+          setUserInput = {setUserName}
         />
 
         <InputField
@@ -76,6 +79,8 @@ const RegisterScreen = ({ navigation }) => {
             />
           }
           keyboardType="email-address"
+          userInput = {userEmail}
+          setUserInput = {setUserEmail}
         />
 
         <InputField
@@ -89,6 +94,8 @@ const RegisterScreen = ({ navigation }) => {
             />
           }
           inputType="password"
+          userInput = {null}
+          setUserInput = {null}
         />
 
         <InputField
@@ -102,6 +109,8 @@ const RegisterScreen = ({ navigation }) => {
             />
           }
           inputType="password"
+          userInput = {userPassword}
+          setUserInput = {setUserPassword}
         />
 
         <CustomButton label={"Next"} onPress={() => navigation.navigate("SchoolRegisterScreen")} />
