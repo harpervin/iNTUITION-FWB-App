@@ -63,7 +63,7 @@ const Tabs = () => {
               <Text
                 style={{ color: focused ? "#6096B4" : "#BDCDD6", fontSize: 12 }}
               >
-                HOME
+                Home
               </Text>
             </View>
           ),
@@ -165,7 +165,7 @@ const Tabs = () => {
 
 const styles = StyleSheet.create({
   shadow: {
-    shadowColor: "#7F5DF0",
+    shadowColor: "#93BFCF",
     shadowOffset: {
       width: 0,
       height: 10,
