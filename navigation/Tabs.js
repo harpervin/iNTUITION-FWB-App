@@ -3,7 +3,15 @@ import {
   createBottomTabNavigator,
   screenOptions,
 } from "@react-navigation/bottom-tabs";
-import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  Dimensions,
+  Platform,
+} from "react-native";
 import HomeScreen from "../screens/HomeScreen";
 import ExploreScreen from "../screens/ExploreScreen";
 import ProgressScreen from "../screens/ProgressScreen";
@@ -11,7 +19,7 @@ import ProfileScreen from "../screens/ProfileScreen";
 
 const Tab = createBottomTabNavigator();
 
-let windowWidth = Dimensions.get('window').width
+const iconElementTop = Platform.OS === "ios" ? 15 : 0;
 
 const Tabs = () => {
   return (
@@ -40,7 +48,7 @@ const Tabs = () => {
               style={{
                 alignItems: "center",
                 justifyContent: "center",
-                top: windowWidth/30,
+                top: iconElementTop,
               }}
             >
               <Image
@@ -70,7 +78,7 @@ const Tabs = () => {
               style={{
                 alignItems: "center",
                 justifyContent: "center",
-                top: 15,
+                top: iconElementTop,
               }}
             >
               <Image
@@ -100,7 +108,7 @@ const Tabs = () => {
               style={{
                 alignItems: "center",
                 justifyContent: "center",
-                top: 15,
+                top: iconElementTop,
               }}
             >
               <Image
@@ -130,7 +138,7 @@ const Tabs = () => {
               style={{
                 alignItems: "center",
                 justifyContent: "center",
-                top: 15,
+                top: iconElementTop,
               }}
             >
               <Image
